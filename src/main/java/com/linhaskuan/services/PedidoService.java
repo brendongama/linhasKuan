@@ -26,11 +26,6 @@ public class PedidoService {
 		return pedidosRepository.findAll();
 	}
 
-	public Pedido findByRg(String rg) {
-		Optional<Pedido> obj = pedidosRepository.findByRg(rg);
-		return obj.orElseThrow(() -> new ObjectnotFoundException("Pedido não encontrado! Id: " + rg));
-	}
-
 	public void delete(Long id) {
 		pedidosRepository.deleteById(id);
 	}

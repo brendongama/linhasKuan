@@ -41,12 +41,6 @@ public class PedidoResources {
 		List<PedidoDto> listDTO = list.stream().map(obj -> new PedidoDto(obj)).collect(Collectors.toList());
 		return ResponseEntity.ok().body(listDTO);
 	}
-
-	@GetMapping(value = "/{rg}")
-	public ResponseEntity<PedidoDto> findByRg(@PathVariable String rg) {
-		Pedido pedido = pedidoService.findByRg(rg);
-		return ResponseEntity.ok().body(new PedidoDto(pedido));
-	}
 	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<PedidoDto> findById(@PathVariable Long id) {

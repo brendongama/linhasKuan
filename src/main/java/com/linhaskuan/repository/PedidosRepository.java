@@ -8,6 +8,4 @@ import com.linhaskuan.domain.Pedido;
 
 public interface PedidosRepository extends JpaRepository<Pedido, Long> {
 
-	Optional<Pedido> findByRg(String rg);
-
 }
