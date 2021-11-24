@@ -47,6 +47,12 @@ public class PedidoResources {
 		Pedido pedido = pedidoService.findByRg(rg);
 		return ResponseEntity.ok().body(new PedidoDto(pedido));
 	}
+	
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<PedidoDto> findById(@PathVariable Long id) {
+		Pedido pedido = pedidoService.findById(id);
+		return ResponseEntity.ok().body(new PedidoDto(pedido));
+	}
 
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<PedidoDto> update(@PathVariable Long id, @RequestBody PedidoDto pedidoDto) {
